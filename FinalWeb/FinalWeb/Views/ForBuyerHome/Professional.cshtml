@@ -1,0 +1,39 @@
+﻿@model IEnumerable<FinalWeb.Models.ProductProfessional>
+
+@{
+    Layout = "~/Views/Shared/MasterPages/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Professional</title>
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center">Gallery</h2>
+        @foreach (var item in Model)
+        {
+
+            double price = Convert.ToInt32(@item.Price);
+            <div class="col-md-3" style="margin-bottom:25px">
+                <div class="thumbnail">
+                    <div class="image" style="margin-bottom:20px">
+                        <img class="img-responsive" src="~/Content/Images/@item.PicUrl" height="350" width="240" />
+                    </div>
+                    <div class="caption" style="border-top:3px solid #808080">
+                        <h3><a href="#">@item.ProductName</a></h3>
+
+                        <h4>@price.ToString("F2")MMK</h4>
+
+
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+</body>
+</html>

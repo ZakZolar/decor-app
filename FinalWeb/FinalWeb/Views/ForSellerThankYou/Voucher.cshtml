@@ -1,0 +1,67 @@
+﻿@model IEnumerable<FinalWeb.Models.SellerOrder>
+
+    @{
+        Layout = "~/Views/Shared/MasterPages/_Layout.cshtml";
+    }
+
+    <!DOCTYPE HTML>
+
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Voucher</title>
+    </head>
+    <body>
+
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.SellerShippingDetail.FirstName)
+                </th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.TotalAmount)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.OrderDate)
+                </th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.SellerPayment.PaymentID)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SellerShippingDetail.FirstName)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TotalAmount)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OrderDate)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SellerPayment.PaymentID)
+                    </td>
+
+
+
+                </tr>
+
+            }
+
+        </table>
+
+
+
+        <a class="btn btn-primary" style="width:600px; align-content:center" href="@Url.Action("Index","ForSellerThankYou")"> Next</a>
+
+
+    </body>
+</html>

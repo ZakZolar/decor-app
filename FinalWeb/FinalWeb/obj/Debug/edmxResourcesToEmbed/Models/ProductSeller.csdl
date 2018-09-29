@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DecorSellerModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ProductSeller">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="PicUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Review">
+    <Key>
+      <PropertyRef Name="ReviewID" />
+    </Key>
+    <Property Name="ReviewID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerID" Type="Int32" />
+    <Property Name="ProductID" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Review1" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Rate" Type="Int32" />
+    <Property Name="DateTime" Type="DateTime" Precision="3" />
+    <Property Name="isDelete" Type="Boolean" />
+  </EntityType>
+  <EntityContainer Name="DecorSellerEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ProductSellers" EntityType="Self.ProductSeller" />
+    <EntitySet Name="Reviews" EntityType="Self.Review" />
+    <EntitySet Name="SellerOrderDetails" EntityType="DecorSellerModel.SellerOrderDetail" />
+    <EntitySet Name="SellerOrders" EntityType="DecorSellerModel.SellerOrder" />
+    <EntitySet Name="SellerCustomers" EntityType="DecorSellerModel.SellerCustomer" />
+    <EntitySet Name="SellerPayments" EntityType="DecorSellerModel.SellerPayment" />
+    <EntitySet Name="SellerShippingDetails" EntityType="DecorSellerModel.SellerShippingDetail" />
+    <EntitySet Name="SellerPaymentTypes" EntityType="DecorSellerModel.SellerPaymentType" />
+  </EntityContainer>
+  <EntityType Name="SellerOrderDetail">
+    <Key>
+      <PropertyRef Name="OrderDetailsID" />
+    </Key>
+    <Property Name="OrderDetailsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderID" Type="Int32" Nullable="false" />
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <Property Name="UnitPrice" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Quantity" Type="Int32" />
+    <Property Name="Discount" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="TotalAmount" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="OrderDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="SellerOrder">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="OrderID" Type="Int32" Nullable="false" />
+    <Property Name="CustomerID" Type="Int32" Nullable="false" />
+    <Property Name="PaymentID" Type="Int32" />
+    <Property Name="ShippingID" Type="Int32" />
+    <Property Name="Discount" Type="Int32" />
+    <Property Name="Taxes" Type="Int32" />
+    <Property Name="TotalAmount" Type="Int32" />
+    <Property Name="isCompleted" Type="Boolean" />
+    <Property Name="OrderDate" Type="DateTime" Precision="3" />
+    <Property Name="DIspatched" Type="Boolean" />
+    <Property Name="DispatchedDate" Type="DateTime" Precision="3" />
+    <Property Name="Shipped" Type="Boolean" />
+    <Property Name="ShippingDate" Type="DateTime" Precision="3" />
+    <Property Name="Deliver" Type="Boolean" />
+    <Property Name="DeliveryDate" Type="DateTime" Precision="3" />
+    <Property Name="Notes" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="CancelOrder" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="SellerCustomer">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="First_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Last_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Age" Type="Int32" />
+    <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateofBirth" Type="DateTime" Precision="0" />
+    <Property Name="Organization" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PostalCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AltEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Phone1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Phone2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Mobile1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Mobile2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Address1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Address2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Picture" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastLogin" Type="DateTime" Precision="3" />
+    <Property Name="Created" Type="DateTime" Precision="0" />
+    <Property Name="Notes" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SellerPayment">
+    <Key>
+      <PropertyRef Name="PaymentID" />
+    </Key>
+    <Property Name="PaymentID" Type="Int32" Nullable="false" />
+    <Property Name="Type" Type="Int32" Nullable="false" />
+    <Property Name="CreditAmount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DebitAmount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Balance" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="PaymentDateTime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="SellerShippingDetail">
+    <Key>
+      <PropertyRef Name="ShippingID" />
+    </Key>
+    <Property Name="ShippingID" Type="Int32" Nullable="false" />
+    <Property Name="FirstName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Mobile" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Province" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="PostCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SellerPaymentType">
+    <Key>
+      <PropertyRef Name="PayTypeID" />
+    </Key>
+    <Property Name="PayTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TypeName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

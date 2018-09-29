@@ -1,0 +1,39 @@
+﻿@model FinalWeb.Models.usertype
+@{
+    ViewBag.Title = "Index";
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h1 style="text-align:center; font:bolder">User Type</h1>
+        <hr />
+        @Html.ValidationSummary(true)
+   
+       <div class="form-group">
+            @Html.LabelFor(model => model.Usertype, new { @class = "control-label col-md-5" })
+            <div class="col-md-5" style="width:400px">
+               
+                @Html.DropDownListFor(model => model.Usertype, new List<SelectListItem> 
+                { new SelectListItem{Text="Admin",Value="Admin"},
+                  new SelectListItem{Text="Buyer", Value="Buyer"},
+                  new SelectListItem{Text="Seller", Value="Seller"},
+                  new SelectListItem{Text="Professional", Value="Professional"}},
+                "Please Choose User Type"
+                
+                )
+                
+            </div>
+           
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-4 col-md-4" style="width:400px; align-content:center">
+                <input type="submit" value="Submit" class="btn btn-default" />
+            </div>
+        </div>
+        </div>
+
+        }
+

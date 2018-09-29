@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="cb3dc1d9ff4c4b3b83a2b5c478d0727c" Name="Diagram1">
+        <EntityTypeShape EntityType="DecorFinalWebModel.admin_Employee" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DecorFinalWebModel.admin_Login" Width="1.5" PointX="10.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DecorFinalWebModel.Category" Width="1.5" PointX="0.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DecorFinalWebModel.Customer" Width="1.5" PointX="8.25" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DecorFinalWebModel.Order" Width="1.5" PointX="5.25" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DecorFinalWebModel.OrderDetail" Width="1.5" PointX="7.5" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DecorFinalWebModel.Payment" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DecorFinalWebModel.PaymentType" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DecorFinalWebModel.Product" Width="1.5" PointX="5.25" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DecorFinalWebModel.RecentlyView" Width="1.5" PointX="10.5" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DecorFinalWebModel.Review" Width="1.5" PointX="10.5" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="DecorFinalWebModel.Role" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DecorFinalWebModel.ShippingDetail" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DecorFinalWebModel.SubCategory" Width="1.5" PointX="3" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DecorFinalWebModel.Supplier" Width="1.5" PointX="3" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DecorFinalWebModel.Wishlist" Width="1.5" PointX="7.5" PointY="9.5" IsExpanded="true" />
+        <AssociationConnector Association="DecorFinalWebModel.FK_Products_Categories" ManuallyRouted="false" />
+        <AssociationConnector Association="DecorFinalWebModel.FK_SubCategory_Categories" ManuallyRouted="false" />
+        <AssociationConnector Association="DecorFinalWebModel.FK_Order_Customers" ManuallyRouted="false" />
+        <AssociationConnector Association="DecorFinalWebModel.FK_RecentlyViews_Customers" ManuallyRouted="false" />
+        <AssociationConnector Association="DecorFinalWebModel.FK_Review_Customers" ManuallyRouted="false" />
+        <AssociationConnector Association="DecorFinalWebModel.FK_Wishlist_Customers" ManuallyRouted="false" />
+        <AssociationConnector Association="DecorFinalWebModel.FK_Order_Payment" ManuallyRouted="false" />
+        <AssociationConnector Association="DecorFinalWebModel.FK_Order_ShippingDetails" ManuallyRouted="false" />
+        <AssociationConnector Association="DecorFinalWebModel.FK_OrderDetails_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="DecorFinalWebModel.FK_OrderDetails_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="DecorFinalWebModel.FK_Payment_PaymentType" ManuallyRouted="false" />
+        <AssociationConnector Association="DecorFinalWebModel.FK_Products_SubCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="DecorFinalWebModel.FK_Products_Suppliers" ManuallyRouted="false" />
+        <AssociationConnector Association="DecorFinalWebModel.FK_RecentlyViews_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="DecorFinalWebModel.FK_Review_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="DecorFinalWebModel.FK_Wishlist_Products" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DecorFinalWebModel.Professional" Width="1.5" PointX="13.375" PointY="3.75" />
+        <EntityTypeShape EntityType="DecorFinalWebModel.Seller" Width="1.5" PointX="13.375" PointY="11.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

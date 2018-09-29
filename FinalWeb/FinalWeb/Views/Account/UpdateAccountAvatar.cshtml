@@ -1,0 +1,71 @@
+﻿@{
+    ViewBag.Title = "Update Account Avatar | Soul Template";
+    ViewBag.PageTitle = "UPDATE MY ACCOUNT";
+}
+<div class="page-wrap">
+    <div class="wiwet-create-steps">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-4 fadeUpEffect">
+                    <a href="@Url.Action("UpdateAccountInfo", "Account")">
+                        <div class="row">
+                            <div class="col-sm-2"><span>1</span></div>
+                            <div class="col-sm-10">
+                                <p>INFORMATION</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-xs-4 fadeUpEffect1 wait05s active">
+                    <div class="row">
+                        <div class="col-sm-2"><span>2</span></div>
+                        <div class="col-sm-10">
+                            <p>AVATAR</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-4 fadeUpEffect2 wait07s">
+                    <a href="@Url.Action("UpdateAccountWallet", "Account")">
+                        <div class="row">
+                            <div class="col-sm-2"><span>3</span></div>
+                            <div class="col-sm-10">
+                                <p>WALLET</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container fadeUpEffect2 wait09s">
+        <form class="wiwet-upload-avatar">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="wiwet-file-input">
+                        <input class="fileInput" type="file" name="file1" />
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2">
+                            <input type="submit" value="UPDATE" />
+                            <br />
+                            <a href="@Url.Action("UpdateAccountWallet", "Account")" class="button">NEXT</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="current-avatar">
+                        <a href="#"><i class="fa fa-close"></i></a>
+                        <img src="../../Content/Images/avatar.png" />
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>

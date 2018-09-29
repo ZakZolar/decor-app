@@ -1,0 +1,136 @@
+﻿<header id="aa-header">
+    <div class="aa-header-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="aa-header-bottom-area">
+                        <!-- logo  -->
+                        <div class="aa-logo">
+                            <!-- Text based logo -->
+                            @*<a href="@Url.Action("Index","Home")">
+                                    <img src="../../Content/Images/LOGO.png" />
+                                </a>*@
+                            <!-- img based logo -->
+                            <!-- <a href="index.html"><img src="~/Content/img/logo.jpg" alt="logo img"></a> -->
+                        </div>
+                        <!-- / logo  -->
+                        <!-- cart box -->
+                                  <div class="animated fadeIn">
+                            <nav class="navbar navbar-static-top">
+                                <div class="container">
+                                    <div class="navbar-header">
+                                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                                            <span class="sr-only">Toggle navigation</span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                        </button>
+                                        <a class="navbar-brand" href="/">
+                                            <img src="../../Content/Images/LOGO.png" />
+                                        </a>
+                                    </div>
+                                    <div id="navbar" class="navbar-collapse collapse">
+                                        <!--menu:start-->
+                                        <ul class="nav navbar-nav navbar-right navigation">
+                                            <a href="javascript:void(0)" class="collapsed visible-xs" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                                                <img src="../../Content/Images/close-menu.png">
+                                            </a>
+                                            <li><a href="@Url.Action("AddProduct","ForSellerHome")">Home</a></li>
+                                            <li><a href="@Url.Action("Index", "UserType")">USER TYPE</a></li>
+                                            <li><a href="@(Session["username"] != null ? Url.Action("Index", "ForSellerAccount") : Url.Action("Index", "ForSellerAccount"))">My Account</a></li>
+                                            @if (Session["username"] == null)
+                                            {
+
+                                                <li>@Html.ActionLink("Login", "Login", "ForSellerAccount")</li>
+                                            }
+                                            else
+                                            {
+                                                <li><a href="@Url.Action("Logout","ForSellerAccount")">Logout</a></li>
+                                                <li><a href="">@Session["username"]</a></li>
+                                            }
+                                            
+                                            @*<li class="dropdown iconic-menu">
+                                                    <form>
+                                                        <a href="#" data-toggle="dropdown" class="currency-trigger" aria-haspopup="true" aria-expanded="false">
+                                                            <span class="selected-currency"><i class="fa fa-dollar"></i></span>
+                                                        </a>
+                                                        <ul class="dropdown-menu currency-dropdown" aria-labelledby="dLabel">
+                                                            <li>
+                                                                <input id="dollarCurrency" type="radio" name="currency">
+                                                                <label for="dollarCurrency">USD - <i class="fa fa-dollar"></i></label>
+                                                            </li>
+                                                            <li>
+                                                                <input id="euroCurrency" type="radio" name="currency">
+                                                                <label for="euroCurrency">EUR - <i class="fa fa-euro"></i></label>
+                                                            </li>
+                                                            <li>
+                                                                <input id="gbpCurrency" type="radio" name="currency">
+                                                                <label for="gbpCurrency">GBP - <i class="fa fa-gbp"></i></label>
+                                                            </li>
+                                                            <li>
+                                                                <input id="yenCurrency" type="radio" name="currency">
+                                                                <label for="yenCurrency">JPY - <i class="fa fa-yen"></i></label>
+                                                            </li>
+                                                        </ul>
+                                                    </form>
+                                                </li>*@
+                                            @*<li class="dropdown iconic-menu">
+                                                    <form>
+                                                        <a href="#" data-toggle="dropdown" class="currency-trigger user-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+                                                            <span><i class="fa fa-user"></i></span>
+                                                        </a>
+                                                        <ul class="dropdown-menu currency-dropdown user-dropdown" aria-labelledby="dLabel">
+                                                            <li>
+                                                                <a href="@Url.Action("CreateAccountInfo", "Account")">Create Account</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="@Url.Action("Login","Account")">Login</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" data-toggle="modal" data-target="#forgotPassModal">Forgot Password</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="@Url.Action("MyWishlist", "Account")">Wish List</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="@Url.Action("Index", "Cart")">My Cart</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="@Url.Action("MyOrders", "Account")">My Orders</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="/">Logout</a>
+                                                            </li>
+                                                        </ul>
+                                                    </form>
+                                                </li>*@
+                                            @*<li class="iconic-menu">
+                                                    <a href="#" data-toggle="popover" data-placement="bottom" data-html="true"
+                                                       data-content="<input type='text' placeholder='Search' />"><i class="fa fa-search"></i></a>
+                                                </li>*@
+
+
+                                            @*<a href="@Url.Action("Index", "Cart")"><i class="fa fa-shopping-cart"></i><span>2</span></a></li>*@
+                                        </ul>
+
+
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                                           </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- / header bottom  -->
+    <!-- / header section -->
+
+
+</header>
+<div class="page-title">
+    <h1 class="animated fadeInLeftBig">
+        @ViewBag.PageTitle
+    </h1>
+</div>
+

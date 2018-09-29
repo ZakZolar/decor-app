@@ -1,0 +1,161 @@
+﻿@{
+    ViewBag.Title = "Shopping Cart | Soul Template";
+    ViewBag.PageTitle = "MY SHOPPING CART";
+}
+<div class="container page-wrap">
+    <div class="table-responsive1 shopping-cart fadeUpEffect">
+        <table class="table">
+            <tr>
+                <th class="visible-xs">PRODUCT</th>
+                <th class="hidden-xs" colspan="2">PRODUCT</th>
+                <th class="hidden-xs">UNIT PRICE</th>
+                <th class="visible-xs">PRICE</th>
+                <th>QUANTITY</th>
+                <th>TOTAL</th>
+                <th></th>
+            </tr>
+
+            <tr>
+                <td class="hidden-xs">
+                    <a href="@Url.Action("ProductDetail", "Home")"><img src="../../Content/Images/versace-dress.jpg" /></a>
+                </td>
+                <td>
+                    <a class="visible-xs" href="@Url.Action("ProductDetail", "Home")"><img src="../../Content/Images/versace-dress.jpg" /></a>
+                    VERSACE DRESS #36P
+                </td>
+                <td>$513.99</td>
+                <td>
+                    <div class="input-group spinner">
+                        <input type="text" class="form-control" value="2" min="0" max="100" />
+                        <div class="input-group-btn-vertical">
+                            <button class="btn btn-default hidden-xs" type="button"><i class="fa fa-plus"></i></button>
+                            <button class="btn btn-default hidden-xs" type="button"><i class="fa fa-minus"></i></button>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <b>$1,027.98</b>
+                </td>
+                <td align>
+                    <a href="#"><i class="fa fa-trash"></i></a>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="hidden-xs">
+                    <a href="@Url.Action("ProductDetail", "Home")"><img src="../../Content/Images/majestic.jpg" /></a>
+                </td>
+                <td>
+                    <a class="visible-xs" href="@Url.Action("ProductDetail", "Home")"><img src="../../Content/Images/majestic.jpg"></a>
+                    MAJESTIC #36P
+                </td>
+                <td>$1,582.99</td>
+                <td>
+                    <div class="input-group spinner">
+                        <input type="text" class="form-control" value="1" min="0" max="100" />
+                        <div class="input-group-btn-vertical">
+                            <button class="btn btn-default hidden-xs" type="button"><i class="fa fa-plus"></i></button>
+                            <button class="btn btn-default hidden-xs" type="button"><i class="fa fa-minus"></i></button>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <b>$1,582.99</b>
+                </td>
+                <td align>
+                    <a href="#"><i class="fa fa-trash"></i></a>
+                </td>
+            </tr>
+
+
+        </table>
+    </div>
+
+    <div class="row cart-buttons fadeUpEffect1 wait05s">
+        <div class="col-sm-3">
+            <a href="@Url.Action("Categories", "Home")" class="button default-button">CONTINUE SHOPPING</a>
+        </div>
+        <div class="col-sm-3 col-sm-offset-3">
+            <a href="#" class="button default-button">CLEAR CART</a>
+        </div>
+        <div class="col-sm-3">
+            <a href="#" class="button">UPDATE CART</a>
+        </div>
+    </div>
+
+    <div class="row cart-boxes">
+        <div class="col-sm-4 fadeUpEffect2 wait07s text-center">
+            <div>
+                <h3>ESTIMATE SHIPPING AND TAXES</h3>
+                <p>Enter your destination to get an estimation</p>
+                <select class="selectpicker wiwet-select">
+                    <option>COUNTRY</option>
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                    <option>Option 3</option>
+                    <option>Option 4</option>
+                    <option>Option 5</option>
+                </select>
+
+                <select class="selectpicker wiwet-select">
+                    <option>STATE</option>
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                    <option>Option 3</option>
+                    <option>Option 4</option>
+                    <option>Option 5</option>
+                </select>
+
+
+                <a href="#" class="button">GET A QUOTE</a>
+            </div>
+        </div>
+
+        <div class="col-sm-4 fadeUpEffect2 wait08s text-center">
+            <div>
+                <h3>DISCOUNT</h3>
+                <p>Enter a Cupon code</p>
+                <input type="text" value="XXXXXXXXXX" class="text-center" />
+                <a href="#" class="button">APPLY</a>
+            </div>
+        </div>
+
+        <div class="col-sm-4 fadeUpEffect2 wait09s">
+            <div>
+                <h3>TOTAL</h3>
+                <table>
+                    <tr>
+                        <td>Sub Total</td>
+                        <td>$ 2,610.97</td>
+                    </tr>
+                    <tr>
+                        <td>Taxes</td>
+                        <td>$ 125.99</td>
+                    </tr>
+                    <tr>
+                        <td>Shipping</td>
+                        <td>$ 32.99</td>
+                    </tr>
+                    <tr>
+                        <td>Discount</td>
+                        <td>-$ 99.99</td>
+                    </tr>
+                </table>
+                <div class="black-line"></div>
+                <table class="total-">
+                    <tr>
+                        <td>TOTAL</td>
+                        <td>$ 2,669.96</td>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row checkout-buttons fadeUpEffect3">
+        <div class="col-sm-4 col-sm-offset-8">
+            <a href="@Url.Action("CheckoutInformation", "Cart")" class="button">CHECKOUT</a>
+        </div>
+    </div>
+</div>

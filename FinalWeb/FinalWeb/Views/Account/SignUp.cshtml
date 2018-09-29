@@ -1,0 +1,85 @@
+﻿@model FinalWeb.Models.regdb
+
+@{
+    ViewBag.Title = "SignUp";
+   
+}
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h1 style="text-align:center; font:bolder">Sign Up</h1>
+        <hr />
+        @Html.ValidationSummary(true)
+
+       
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Fullname, new { @class = "control-label col-md-4" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.Fullname)
+                @Html.ValidationMessageFor(model => model.Fullname)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email, new { @class = "control-label col-md-4" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.Email)
+                @Html.ValidationMessageFor(model => model.Email)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Username, new { @class = "control-label col-md-4" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.Username)
+                @Html.ValidationMessageFor(model => model.Username)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Password, new { @class = "control-label col-md-4" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.Password)
+                @Html.ValidationMessageFor(model => model.Password)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ConfirmPassword, new { @class = "control-label col-md-4" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.ConfirmPassword)
+                @Html.ValidationMessageFor(model => model.ConfirmPassword)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Usertype, new { @class = "control-label col-md-4" })
+            <div class="col-md-4">
+               
+                @Html.DropDownListFor(model => model.Usertype, new List<SelectListItem> 
+                { new SelectListItem{Text="Admin",Value="Admin"},
+                  new SelectListItem{Text="Buyer", Value="Buyer"},
+                  new SelectListItem{Text="Seller", Value="Seller"},
+                  new SelectListItem{Text="Professional", Value="Professional"}},
+                "Please Select"
+                
+                )
+                
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-4 col-md-4">
+                <input type="submit" value="Sign Up" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

@@ -1,0 +1,30 @@
+﻿@model FinalWeb.Models.regdb
+@{
+    ViewBag.Title = "AfterLogin";
+    ViewBag.PageTitle = "PROFILE";
+}
+
+<h2>AfterLogin</h2>
+<div class="container page-wrap">
+    <div class="row account-page">
+        <div class="col-sm-4 text-center fadeUpEffect wait05s">
+            <div>
+                <a href="@Url.Action("UpdateAccountAvatar", "Account")" class="options">
+                    <i class="fa fa-cog"></i>
+                    <span><i class="fa fa-cog"></i></span>
+                </a>
+                <img src="../../Content/Images/emily.png" />
+               
+                        <h1> @Model.Username</h1>
+               
+               
+                
+                <a href="@Url.Action("MyWishlist", "Account")">MY WHISHLIST</a>
+                <a href="@Url.Action("MyOrders", "Account")">MY ORDERS</a>
+                <a href="@Url.Action("UpdateAccountInfo", "Account")">EDIT ACCOUNT</a>
+                <a href="/" class="button">LOG OUT</a>
+            </div>
+        </div>
+       
+        </div>
+    </div>

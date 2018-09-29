@@ -1,0 +1,819 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{094BD11B-8D8D-4335-B2D2-65343D7ADF95}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FinalWeb</RootNamespace>
+    <AssemblyName>FinalWeb</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort>44300</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
+    <UseGlobalApplicationHostFile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <Use64BitIISExpress />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Facebook, Version=6.0.10.0, Culture=neutral, PublicKeyToken=58cb4f2111d1e6de, processorArchitecture=MSIL">
+      <HintPath>..\packages\Facebook.7.0.6\lib\net45\Facebook.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.2\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.6\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.6\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\admin_LoginController.cs" />
+    <Compile Include="Controllers\BuyerSideSellerAccountController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\ForBuyerAccountController.cs" />
+    <Compile Include="Controllers\ForBuyerCartController.cs" />
+    <Compile Include="Controllers\ForBuyerCheckOutController.cs" />
+    <Compile Include="Controllers\ForBuyerHomeController.cs" />
+    <Compile Include="Controllers\ForBuyerLoadDataController.cs" />
+    <Compile Include="Controllers\ForBuyerProductController.cs" />
+    <Compile Include="Controllers\ForBuyerThankYouController.cs" />
+    <Compile Include="Controllers\ForBuyerWishListController.cs" />
+    <Compile Include="Controllers\ForProfessionalAccountController.cs" />
+    <Compile Include="Controllers\ForProfessionalHomeController.cs" />
+    <Compile Include="Controllers\ForSellerAccountController.cs" />
+    <Compile Include="Controllers\ForSellerCartController.cs" />
+    <Compile Include="Controllers\ForSellerCheckOutController.cs" />
+    <Compile Include="Controllers\ForSellerHomeController.cs" />
+    <Compile Include="Controllers\ForSellerProductController.cs" />
+    <Compile Include="Controllers\ForSellerThankYouController.cs" />
+    <Compile Include="Controllers\Image.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\ProfileController.cs" />
+    <Compile Include="Controllers\SettingsController.cs" />
+    <Compile Include="Controllers\SupplierController.cs" />
+    <Compile Include="Controllers\UserTypeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\admin_Employee.cs">
+      <DependentUpon>DecorFinalWeb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\admin_Login.cs">
+      <DependentUpon>DecorFinalWeb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Category.cs">
+      <DependentUpon>DecorFinalWeb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Charts.cs" />
+    <Compile Include="Models\Customer.cs">
+      <DependentUpon>DecorFinalWeb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomerExtend.cs" />
+    <Compile Include="Models\DecorFinalWeb.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DecorFinalWeb.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DecorFinalWeb.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DecorFinalWeb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DecorFinalWeb.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DecorFinalWeb.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeExtend.cs" />
+    <Compile Include="Models\LoginExtend.cs" />
+    <Compile Include="Models\Order.cs">
+      <DependentUpon>DecorFinalWeb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OrderDetail.cs">
+      <DependentUpon>DecorFinalWeb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Payment.cs">
+      <DependentUpon>DecorFinalWeb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PaymentType.cs">
+      <DependentUpon>DecorFinalWeb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Product.cs">
+      <DependentUpon>DecorFinalWeb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductProfessional.cs">
+      <DependentUpon>ProfessionalDecor.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductSeller.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProductSeller.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductSeller.cs">
+      <DependentUpon>ProductSeller.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductSeller.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProductSeller.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductSeller1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProductSeller.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Professional.cs">
+      <DependentUpon>DecorFinalWeb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProfessionalDecor.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProfessionalDecor.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProfessionalDecor.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProfessionalDecor.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProfessionalDecor.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProfessionalDecor.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RecentlyView.cs">
+      <DependentUpon>DecorFinalWeb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\regdb.cs">
+      <DependentUpon>SignupModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Review.cs">
+      <DependentUpon>DecorFinalWeb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Role.cs">
+      <DependentUpon>DecorFinalWeb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Seller.cs">
+      <DependentUpon>DecorFinalWeb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SellerCustomer.cs">
+      <DependentUpon>ProductSeller.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SellerOrder.cs">
+      <DependentUpon>ProductSeller.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SellerOrderDetail.cs">
+      <DependentUpon>ProductSeller.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SellerPayment.cs">
+      <DependentUpon>ProductSeller.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SellerPaymentType.cs">
+      <DependentUpon>ProductSeller.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SellerShippingData.cs" />
+    <Compile Include="Models\SellerShippingDetail.cs">
+      <DependentUpon>ProductSeller.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ShippingData.cs" />
+    <Compile Include="Models\ShippingDetail.cs">
+      <DependentUpon>DecorFinalWeb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SignupModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SignupModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SignupModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SignupModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SignupModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SignupModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SubCategory.cs">
+      <DependentUpon>DecorFinalWeb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Supplier.cs">
+      <DependentUpon>DecorFinalWeb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SupplierExtend.cs" />
+    <Compile Include="Models\sysdiagram.cs" />
+    <Compile Include="Models\TemData.cs" />
+    <Compile Include="Models\TopSoldProduct.cs" />
+    <Compile Include="Models\usertype.cs" />
+    <Compile Include="Models\Voucher.cs" />
+    <Compile Include="Models\Wishlist.cs">
+      <DependentUpon>DecorFinalWeb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\bootstrap-rtl.css" />
+    <Content Include="Content\css\bootstrap-rtl.min.css" />
+    <Content Include="Content\css\bootstrap.css" />
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\plugins\morris.css" />
+    <Content Include="Content\css\sb-admin-rtl.css" />
+    <Content Include="Content\css\sb-admin.css" />
+    <Content Include="Content\Fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\Images\arrow.png" />
+    <Content Include="Content\Images\bg11.jpg" />
+    <Content Include="Content\Images\cart.png" />
+    <Content Include="Content\Images\close-menu.png" />
+    <Content Include="Content\Images\credit-cards.png" />
+    <Content Include="Content\Images\easy.png" />
+    <Content Include="Content\Images\english.jpg" />
+    <Content Include="Content\Images\furniture1.jpg" />
+    <Content Include="Content\Images\furniture2.jpg" />
+    <Content Include="Content\Images\furniture3.jpg" />
+    <Content Include="Content\Images\furniture4.jpg" />
+    <Content Include="Content\Images\join-soul.jpg" />
+    <Content Include="Content\Images\lg1.jpg" />
+    <Content Include="Content\Images\lg2.jpg" />
+    <Content Include="Content\Images\lg3.jpg" />
+    <Content Include="Content\Images\lg4.jpg" />
+    <Content Include="Content\Images\living1.jpg" />
+    <Content Include="Content\Images\living2.jpg" />
+    <Content Include="Content\Images\living3.jpg" />
+    <Content Include="Content\Images\living4.jpg" />
+    <Content Include="Content\Images\LOGO.jpg" />
+    <Content Include="Content\Images\logo.png" />
+    <Content Include="Content\Images\mail.png" />
+    <Content Include="Content\Images\map-pin.png" />
+    <Content Include="Content\Images\new1.jpg" />
+    <Content Include="Content\Images\new2.jpg" />
+    <Content Include="Content\Images\new3.jpg" />
+    <Content Include="Content\Images\new4.jpg" />
+    <Content Include="Content\Images\pass.png" />
+    <Content Include="Content\Images\payment.png" />
+    <Content Include="Content\Images\paypal.png" />
+    <Content Include="Content\Images\select-focus.png" />
+    <Content Include="Content\Images\select-primary.png" />
+    <Content Include="Content\Images\select.png" />
+    <Content Include="Content\Images\slider1.jpg" />
+    <Content Include="Content\Images\slider2.jpg" />
+    <Content Include="Content\Images\slider3.jpg" />
+    <Content Include="Content\Images\slider4.jpg" />
+    <Content Include="Content\Images\slider5.jpg" />
+    <Content Include="Content\Images\speed.png" />
+    <Content Include="Content\Images\transportation.png" />
+    <Content Include="Content\Images\upload-cloud.png" />
+    <Content Include="Content\Intellisence\css\jquery-ui.min.css" />
+    <Content Include="Content\Intellisence\js\jquery-1.10.2.min.js" />
+    <Content Include="Content\Intellisence\js\jquery-ui.min.js" />
+    <Content Include="Content\js\bootstrap.js" />
+    <Content Include="Content\js\bootstrap.min.js" />
+    <Content Include="Content\js\jquery-1.8.2.min.js" />
+    <Content Include="Content\js\jquery-3.1.0.min.js" />
+    <Content Include="Content\js\jquery.js" />
+    <Content Include="Content\js\jquery.validate.min.js" />
+    <Content Include="Content\js\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Content\js\MyCustom.js" />
+    <Content Include="Content\js\plugins\flot\excanvas.min.js" />
+    <Content Include="Content\js\plugins\flot\flot-data.js" />
+    <Content Include="Content\js\plugins\flot\jquery.flot.js" />
+    <Content Include="Content\js\plugins\flot\jquery.flot.pie.js" />
+    <Content Include="Content\js\plugins\flot\jquery.flot.resize.js" />
+    <Content Include="Content\js\plugins\flot\jquery.flot.tooltip.min.js" />
+    <Content Include="Content\js\plugins\morris\morris-data.js" />
+    <Content Include="Content\js\plugins\morris\morris.js" />
+    <Content Include="Content\js\plugins\morris\morris.min.js" />
+    <Content Include="Content\js\plugins\morris\raphael.min.js" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="Content\Scripts\bootstrap-select.min.js" />
+    <Content Include="Content\Scripts\bootstrap.js" />
+    <Content Include="Content\Scripts\bootstrap.min.js" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <None Include="Content\Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Content\Scripts\jquery-1.10.2.js" />
+    <Content Include="Content\Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Content\Scripts\jquery.countTo.js" />
+    <None Include="Content\Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Content\Scripts\jquery.validate.js" />
+    <Content Include="Content\Scripts\jquery.validate.min.js" />
+    <Content Include="Content\Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Content\Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Content\Scripts\jquery.waypoints.min.js" />
+    <Content Include="Content\Scripts\map.config.js" />
+    <Content Include="Content\Scripts\modernizr-2.6.2.js" />
+    <Content Include="Content\Scripts\npm.js" />
+    <Content Include="Content\Scripts\respond.js" />
+    <Content Include="Content\Scripts\respond.min.js" />
+    <Content Include="Content\Scripts\site.js" />
+    <Content Include="Content\Scripts\decor.js" />
+    <None Include="Content\Scripts\_references.js" />
+    <Content Include="Content\StyleSheets\animate.min.css" />
+    <Content Include="Content\StyleSheets\bootstrap-select.min.css" />
+    <Content Include="Content\StyleSheets\bootstrap-theme.css" />
+    <Content Include="Content\StyleSheets\bootstrap-theme.min.css" />
+    <Content Include="Content\StyleSheets\bootstrap.css" />
+    <Content Include="Content\StyleSheets\bootstrap.min.css" />
+    <Content Include="Content\StyleSheets\decor.css" />
+    <Content Include="Content\StyleSheets\decor.responsive.css" />
+    <Content Include="Content\StyleSheets\PagedList.css" />
+    <Content Include="Content\StyleSheets\style.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Models\DecorFinalWeb.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DecorFinalWeb.edmx</DependentUpon>
+      <LastGenOutput>DecorFinalWeb.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\DecorFinalWeb.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DecorFinalWeb.edmx</DependentUpon>
+      <LastGenOutput>DecorFinalWeb.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ProductSeller.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ProductSeller.edmx</DependentUpon>
+      <LastGenOutput>ProductSeller.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ProductSeller.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ProductSeller.edmx</DependentUpon>
+      <LastGenOutput>ProductSeller1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ProfessionalDecor.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ProfessionalDecor.edmx</DependentUpon>
+      <LastGenOutput>ProfessionalDecor.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ProfessionalDecor.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ProfessionalDecor.edmx</DependentUpon>
+      <LastGenOutput>ProfessionalDecor.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\SignupModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SignupModel.edmx</DependentUpon>
+      <LastGenOutput>SignupModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\SignupModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SignupModel.edmx</DependentUpon>
+      <LastGenOutput>SignupModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Project_Readme.html" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <EntityDeploy Include="Models\ProductSeller.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ProductSeller.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ProductSeller.edmx.diagram">
+      <DependentUpon>ProductSeller.edmx</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\index.d.ts" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\popper-utils.js" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\Shared\_Product.cshtml" />
+    <Content Include="Views\ForBuyerProduct\Index.cshtml" />
+    <Content Include="Views\ForBuyerProduct\Products.cshtml" />
+    <Content Include="Views\ForBuyerProduct\ViewDetails.cshtml" />
+    <Content Include="Views\ForBuyerAccount\Index.cshtml" />
+    <Content Include="Views\ForBuyerAccount\Login.cshtml" />
+    <Content Include="Views\ForBuyerCheckOut\Index.cshtml" />
+    <Content Include="Views\ForBuyerCart\Index.cshtml" />
+    <Content Include="Views\ForBuyerThankYou\Thankyou.cshtml" />
+    <Content Include="Views\ForBuyerWishList\Index.cshtml" />
+    <Content Include="Views\Shared\_Cartbox.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Content\scss\base\_base.scss" />
+    <Content Include="Content\scss\base\_mixins.scss" />
+    <Content Include="Content\scss\base\_variables.scss" />
+    <Content Include="Content\scss\layouts\_footer.scss" />
+    <Content Include="Content\scss\layouts\_header.scss" />
+    <Content Include="Content\scss\layouts\_nav.scss" />
+    <Content Include="Content\scss\modules\_buttons.scss" />
+    <Content Include="Content\scss\modules\_responsive.scss" />
+    <Content Include="Content\scss\modules\_sections.scss" />
+    <Content Include="Content\scss\modules\_typography.scss" />
+    <Content Include="Content\scss\style.scss" />
+    <Content Include="Views\UserType\Index.cshtml" />
+    <EntityDeploy Include="Models\DecorFinalWeb.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DecorFinalWeb.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\DecorFinalWeb.edmx.diagram">
+      <DependentUpon>DecorFinalWeb.edmx</DependentUpon>
+    </Content>
+    <Content Include="Views\ForBuyerHome\About.cshtml" />
+    <Content Include="Views\ForBuyerHome\Contact.cshtml" />
+    <Content Include="Views\ForSellerAccount\Index.cshtml" />
+    <Content Include="Views\_SellerLayout.cshtml" />
+    <Content Include="Views\Shared\Sections\_SellerHeader.cshtml" />
+    <Content Include="Views\ForSellerAccount\_ViewStart.cshtml" />
+    <Content Include="Views\ForSellerHome\_ViewStart.cshtml" />
+    <Content Include="Views\ForSellerHome\AddProduct.cshtml" />
+    <Content Include="Views\ForSellerAccount\Login.cshtml" />
+    <EntityDeploy Include="Models\ProfessionalDecor.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ProfessionalDecor.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ProfessionalDecor.edmx.diagram">
+      <DependentUpon>ProfessionalDecor.edmx</DependentUpon>
+    </Content>
+    <Content Include="Views\ForProfessionalHome\AddProduct.cshtml" />
+    <Content Include="Views\ForProfessionalHome\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Sections\_ProfessionalHeader.cshtml" />
+    <Content Include="Views\_ProfessionalLayout.cshtml" />
+    <Content Include="Views\ForProfessionalAccount\Index.cshtml" />
+    <Content Include="Views\ForProfessionalAccount\_ViewStart.cshtml" />
+    <Content Include="Views\ForProfessionalAccount\Login.cshtml" />
+    <Content Include="Views\_AdminLayout.cshtml" />
+    <Content Include="Views\admin_Login\Index.cshtml" />
+    <Content Include="Views\Customer\Create.cshtml" />
+    <Content Include="Views\Customer\Delete.cshtml" />
+    <Content Include="Views\Customer\Details.cshtml" />
+    <Content Include="Views\Customer\Edit.cshtml" />
+    <Content Include="Views\Customer\Index.cshtml" />
+    <Content Include="Views\Dashboard\About.cshtml" />
+    <Content Include="Views\Dashboard\blank-page.cshtml" />
+    <Content Include="Views\Dashboard\Contact.cshtml" />
+    <Content Include="Views\Dashboard\Index.cshtml" />
+    <Content Include="Views\Employee\Create.cshtml" />
+    <Content Include="Views\Employee\Delete.cshtml" />
+    <Content Include="Views\Employee\Details.cshtml" />
+    <Content Include="Views\Employee\Edit.cshtml" />
+    <Content Include="Views\Employee\Index.cshtml" />
+    <Content Include="Views\Order\Details.cshtml" />
+    <Content Include="Views\Order\Index.cshtml" />
+    <Content Include="Views\Product\Create.cshtml" />
+    <Content Include="Views\Product\Delete.cshtml" />
+    <Content Include="Views\Product\Details.cshtml" />
+    <Content Include="Views\Product\Edit.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Profile\Edit.cshtml" />
+    <Content Include="Views\Profile\Index.cshtml" />
+    <Content Include="Views\Settings\Index.cshtml" />
+    <Content Include="Views\Supplier\Create.cshtml" />
+    <Content Include="Views\Supplier\Delete.cshtml" />
+    <Content Include="Views\Supplier\Details.cshtml" />
+    <Content Include="Views\Supplier\Edit.cshtml" />
+    <Content Include="Views\Supplier\Index.cshtml" />
+    <Content Include="Views\_Order.cshtml" />
+    <Content Include="Views\admin_Login\_ViewStart.cshtml" />
+    <Content Include="Views\Customer\_ViewStart.cshtml" />
+    <Content Include="Views\Dashboard\_ViewStart.cshtml" />
+    <Content Include="Views\Employee\_ViewStart.cshtml" />
+    <Content Include="Views\Order\_ViewStart.cshtml" />
+    <Content Include="Views\Product\_ViewStart.cshtml" />
+    <Content Include="Views\Profile\_ViewStart.cshtml" />
+    <Content Include="Views\Settings\_ViewStart.cshtml" />
+    <Content Include="Views\Supplier\_ViewStart.cshtml" />
+    <Content Include="Views\ForBuyerThankYou\Voucher.cshtml" />
+    <Content Include="Views\ForBuyerProduct\AddReview.cshtml" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Scripts\umd\popper.min.js.map" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\README.md" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Views\_AboutLayout.cshtml" />
+    <Content Include="Views\ForBuyerThankYou\Example.cshtml" />
+    <Content Include="Views\ForBuyerHome\Seller.cshtml" />
+    <Content Include="Views\ForBuyerThankYou\Voucher1.cshtml" />
+    <Content Include="Views\ForBuyerHome\Professional.cshtml" />
+    <Content Include="Views\ForSellerCart\Index.cshtml" />
+    <Content Include="Views\ForBuyerProduct\SellerAddReview.cshtml" />
+    <Content Include="Views\ForSellerCheckOut\Index.cshtml" />
+    <Content Include="Views\ForSellerThankYou\Voucher.cshtml" />
+    <Content Include="Views\ForSellerThankYou\Thankyou.cshtml" />
+    <Content Include="Views\Shared\Sections\_BuyerSideSeller.cshtml" />
+    <Content Include="Views\Shared\Sections\_BuyerSideSellerLayout.cshtml" />
+    <Content Include="Views\ForSellerProduct\SellerViewDetails.cshtml" />
+    <Content Include="Views\BuyerSideSellerAccount\Login.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\Facebook\" />
+    <Folder Include="Views\ForBuyerLoadData\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="Views\Shared\MasterPages\_Layout.cshtml" />
+    <Content Include="Views\Shared\Sections\_Footer.cshtml" />
+    <Content Include="Views\Shared\Sections\_Header.cshtml" />
+    <Content Include="Views\Shared\Sections\_JavaScriptBottom.cshtml" />
+    <Content Include="Views\Shared\Sections\_JavaScriptTop.cshtml" />
+    <Content Include="Views\Shared\Sections\_StyleSheet.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\Fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\Fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\Fonts\glyphicons-halflings-regular.woff2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\StyleSheets\bootstrap-theme.css.map" />
+    <Content Include="Content\StyleSheets\bootstrap-theme.min.css.map" />
+    <Content Include="Content\StyleSheets\bootstrap.css.map" />
+    <Content Include="Content\StyleSheets\bootstrap.min.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Sections\_ForgotPassword.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Sections\_LandingHeader.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Sections\_Login.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\MasterPages\_LandingSiteLayout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\CreateAccountAvatar.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\CreateAccountInfo.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\CreateAccountWallet.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\MyOrders.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\MyWishlist.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\UpdateAccountAvatar.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\UpdateAccountInfo.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\UpdateAccountWallet.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Cart\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Cart\CheckoutInformation.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Cart\DeliveryAddress.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Cart\PaymentInformation.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Images\Thumbs.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Models\SignupModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SignupModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Models\SignupModel.edmx.diagram">
+      <DependentUpon>SignupModel.edmx</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\SignUp.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\Login.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\AfterLogin.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ForBuyerHome\Index.cshtml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>4931</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44300/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

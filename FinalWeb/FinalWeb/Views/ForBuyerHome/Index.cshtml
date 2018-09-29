@@ -1,0 +1,99 @@
+﻿
+@{
+    ViewBag.Title = "Home | Decor";
+}
+<div class="new-products fadeUpEffect2">
+    <h4>Because you are important <br class="visible-xs" /> to us we offer you</h4>
+    <h1>OUR BEST PRODUCTS</h1>
+    <div>
+        <ul class="nav nav-tabs product-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#living" aria-controls="women" role="tab" data-toggle="tab">LIVING</a></li>
+            <li role="presentation"><a href="#lighting" aria-controls="men" role="tab" data-toggle="tab">LIGHTING</a></li>
+            <li role="presentation"><a href="#furniture" aria-controls="childrens" role="tab" data-toggle="tab">FURNITURE</a></li>
+        </ul>
+
+        <div class="tab-content">
+            <!-- Start men product category -->
+            <div class="tab-pane fade in active" id="living">
+                <ul class="aa-product-catg">
+                    <!-- start single product item -->
+                    @foreach (var item in (List<FinalWeb.Models.Product>)@ViewBag.LivingProduct)
+                    {
+                        { Html.RenderPartial("_Product", item); }
+                    }
+                    <!-- end start single product item -->
+                </ul>
+                <a class="aa-browse-btn" href="#">Browse all Product <span class="fa fa-long-arrow-right"></span></a>
+            </div>
+            <!-- start women product category -->
+            <div class="tab-pane fade" id="lighting">
+                <ul class="aa-product-catg">
+                    <!-- start single product item -->
+                    @foreach (var item in (List<FinalWeb.Models.Product>)@ViewBag.LightingProduct)
+                    {
+                        { Html.RenderPartial("_Product", item); }
+                    }
+                    <!-- end start single product item -->
+                </ul>
+                <a class="aa-browse-btn" href="#">Browse all Product <span class="fa fa-long-arrow-right"></span></a>
+            </div>
+            <!-- start sports product category -->
+            <div class="tab-pane fade" id="furniture">
+                <ul class="aa-product-catg">
+                    <!-- start single product item -->
+                    @foreach (var item in (List<FinalWeb.Models.Product>)@ViewBag.FurnitureProduct)
+                    {
+                        { Html.RenderPartial("_Product", item); }
+                    }
+                    <!-- end start single product item -->
+                </ul>
+                <a class="aa-browse-btn" href="#">Browse all Product <span class="fa fa-long-arrow-right"></span></a>
+            </div>
+            </div>
+            
+
+        </div>
+    </div>
+
+
+
+
+
+
+    <div class="container page-wrap">
+
+        
+            <h1 style="text-align:center; font:bolder">New in DECOR</h1>
+            <h2 style="text-align:center; font:bolder">NEW PRODUCTS</h2>
+            <div class="fadeUpEffect3 wait05s">
+                <div class="row">
+                    
+                    <ul class="aa-product-catg">
+                        @foreach (var item in (List<FinalWeb.Models.Product>)@ViewBag.NewProduct)
+                        {
+                            { Html.RenderPartial("_Product", item); }
+                        }
+                        </ul>
+</div>
+                <div class="row">
+                    <a class="btn" href="@Url.Action("Seller", "ForBuyerHome")" style="background-color:black; color:white">View More Products from Other Sellers <span class="fa fa-long-arrow-right"></span></a>
+                </div>
+                <br /><br /><br />
+
+                <div class="row">
+                    <a class="btn" href="@Url.Action("Professional", "ForBuyerHome")" style="background-color:black; color:white">View More Galleries from Our Professional <span class="fa fa-long-arrow-right"></span></a>
+                </div>
+                <br /><br /><br />
+               </div>
+        </div>
+
+    
+
+
+
+
+
+
+
+ 
+

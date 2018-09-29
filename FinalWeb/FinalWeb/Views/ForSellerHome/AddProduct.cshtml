@@ -1,0 +1,72 @@
+﻿@model IEnumerable<FinalWeb.Models.ProductSeller>
+@{
+    Layout = "~/Views/_SellerLayout.cshtml";
+}
+
+<div class="container">
+    <h2> Add Product </h2>
+    <div class="row">
+        <div class="col-md-6">
+            <form id="AddProduct" method="post" enctype="multipart/form-data" onsubmit="return AjaxPost(this)">
+                <label>
+                    Title
+                </label><br />
+                <input id="ProductName" name="ProductName" class="form-control" placeholder="Product Name"/>
+
+                
+                <label>
+                    Price
+                </label><br />
+                <input id="Price" name="Price" class="form-control" placeholder="Price" />
+
+
+                <label>
+                    Title
+                </label><br />
+                <input id="ImageUpload" name="ImageUpload" class="form-control" type="file" />
+
+                <button class="btn btn-danger" style="background-color:black">Add</button>
+            </form>
+        </div>
+    </div>
+</div>
+<br /><br /><br />
+<div class="container">
+    <h2 class="text-center">Product List</h2>
+    @foreach (var item in Model)
+    {
+        double price = Convert.ToInt32(@item.Price);
+        <div class="col-md-3" style="margin-bottom:25px">
+            <div class="thumbnail">
+                <div class="image" style="margin-bottom:20px">
+                    <img class="img-responsive" src="~/Content/Images/@item.PicUrl" height="350" width="240" />
+                </div>
+                <div class="caption" style="border-top:3px solid #808080">
+                    <h3><a href="#">@item.ProductName</a></h3>
+                    
+                    <h4>@price.ToString("F2")MMK</h4>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+<script>
+    function AjaxPost(formData) {
+        var ajaxConfig = {
+            type: "post",
+            url: "/ForSellerHome/SaveData",
+            data: new FormData(formData),
+            success: function (result) {
+                alert(result);
+                window.location.href="/ForSellerHome/AddProduct"
+            }
+
+        }
+        if ($(formData).attr('enctype') == "multipart/form-data") {
+            ajaxConfig["contentType"] = false;
+            ajaxConfig["processData"] = false;
+        }
+        $.ajax(ajaxConfig);
+        return false;
+    }
+</script>

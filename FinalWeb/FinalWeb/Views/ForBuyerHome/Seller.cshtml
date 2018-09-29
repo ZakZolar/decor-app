@@ -1,0 +1,97 @@
+﻿@model IEnumerable<FinalWeb.Models.ProductSeller>
+
+@{
+    Layout = "~/Views/Shared/MasterPages/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Seller</title>
+</head>
+<body>
+    @*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PicUrl)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PicUrl)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.ProductID }) |
+                @Html.ActionLink("Details", "Details", new { id=item.ProductID }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.ProductID })
+            </td>
+        </tr>
+    }
+    
+    </table>*@
+    @*<li>
+        <figure>
+            <a class="aa-product-img" href="@Url.Action("ViewDetails", "ForBuyerProduct", new { id = Model.ProductID })"><img src="@Model.ImageURL" alt="@Model.AltText"></a>
+            <a class="aa-add-card-btn" href="@(Session["username"] != null ? Url.Action("AddToCart", "ForBuyerProduct", new { id = @Model.ProductID}) : Url.Action("Login", "ForBuyerAccount"))"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
+            
+        </figure>
+        <div class="aa-product-hvr-content">
+            <a href="@(Session["username"]!=null ? Url.Action("WishList","ForBuyerProduct", new {id=@Model.ProductID }) :Url.Action("Login","ForBuyerAccount"))" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+            <a href="@Url.Action("ViewDetails", "ForBuyerProduct", new { id = Model.ProductID })" title="View Details" data-toggle="tooltip" data-placement="top"><span class="fa fa-info"></span></a>
+
+        </div>
+        @if (Model.AddBadge == true)
+        {
+            <span class="aa-badge  @Model.OfferBadgeClass" href="#">@Model.OfferTitle</span>
+        }
+        @{
+            TempData["returnURL"] = Request.RawUrl;
+        }
+    </li>*@
+
+    <div class="container">
+        <h2 class="text-center">Product List</h2>
+        @foreach (var item in Model)
+        {
+           
+            double price = Convert.ToInt32(@item.Price);
+            <div class="col-md-3" style="margin-bottom:25px">
+                <div class="thumbnail">
+                    <div class="image" style="margin-bottom:20px">
+                        <img class="img-responsive" src="~/Content/Images/@item.PicUrl" height="350" width="240" />
+                    </div>
+                    <div class="caption" style="border-top:3px solid #808080">
+                        <a class="aa-product-img" href="@Url.Action("SellerViewDetails", "ForSellerProduct", new { id=@item.ProductID })">View Detail</a>
+                        <a class="aa-add-card-btn" href="@Url.Action("SellerAddToCart", "ForSellerProduct", new { id = @item.ProductID })"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
+                        <h3><a href="#">@item.ProductName</a></h3>
+
+                        <h4>@price.ToString("F2")MMK</h4>
+
+                        
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</body>
+</html>

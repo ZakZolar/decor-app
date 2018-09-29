@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SellerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="SellerProduct">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Price" Type="nvarchar" MaxLength="20" />
+    <Property Name="Quantity" Type="nvarchar" MaxLength="50" />
+    <Property Name="SellerName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ImageUrl" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="SellerModelStoreContainer">
+    <EntitySet Name="SellerProduct" EntityType="Self.SellerProduct" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "Contact";
+}
+
+@section PageJavaScript{
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdyG9vKctQaCq7HBjuEV0q-3Y5UaVKRFU&callback=initMap"></script>
+    @*<script src="~/Content/Scripts/map.config.js"></script>*@
+}
+<div class="row"></div>
+<div class="container page-wrap">
+    <div class="row contact-page">
+        <div class="col-sm-8 fadeUpEffect">
+            <form>
+                <h3>SEND US A MESSAGE</h3>
+                <input type="text" required placeholder="Your Name*" />
+                <input type="text" required placeholder="Email*" />
+                <input type="text" required placeholder="Subject*" />
+                <textarea required placeholder="Your message*"></textarea>
+                <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3">
+                        <input type="submit" value="SEND" />
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-4 fadeUpEffect wait05s">
+            <div>
+                <p><i class="fa fa-map-marker"></i> DECOR, MERCHANT ROAD <br> MYANMAR . YANGON</p>
+                <p><i class="fa fa-phone"></i> <a href="tel:0987654334">+99 87 65 43 34</a></p>
+                <p><i class="fa fa-envelope-o"></i> <a href="mailto:contact@decor.com">contact@decor.com</a></p>
+            </div>
+            <div>
+                <h4>SOCIALIZE WITH DECOR</h4>
+                <a href="https://www.facebook.com"><i class="fa fa-facebook"></i></a>
+                <a href="https://www.twitter.com"><i class="fa fa-twitter"></i></a>
+                <a href="https://www.linkedin.com"><i class="fa fa-linkedin"></i></a>
+                <a href="https://www.googleplus.com"><i class="fa fa-google-plus"></i></a>
+                <a href="https://www.pinterest.com"><i class="fa fa-pinterest-p"></i></a>
+            </div>
+            <div>
+                <h5>MAP</h5>
+                <div id="map-canvas"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var map;
+    function initMap() {
+        map = new google.maps.Map(document.getElementById('map-canvas'), {
+            center: { lat: 16.771533, lng: 96.168551 }, zoom: 16
+        });
+    }
+</script>
+

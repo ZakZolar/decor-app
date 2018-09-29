@@ -1,0 +1,66 @@
+﻿@{
+    ViewBag.Title = "Account | Soul Template";
+    ViewBag.PageTitle = "MY ACCOUNT";
+}
+<div class="container page-wrap">
+    <div class="row account-page">
+        <div class="col-sm-4 text-center fadeUpEffect wait05s">
+            <div>
+                <a href="@Url.Action("UpdateAccountAvatar", "Account")" class="options">
+                    <i class="fa fa-cog"></i>
+                    <span><i class="fa fa-cog"></i></span>
+                </a>
+                <img src="../../Content/Images/emily.png" />
+                <h1>EMILY DOE</h1>
+                <h5>VIP CUSTOMER</h5>
+                <a href="@Url.Action("MyWishlist", "Account")">MY WHISHLIST</a>
+                <a href="@Url.Action("MyOrders", "Account")">MY ORDERS</a>
+                <a href="@Url.Action("UpdateAccountInfo", "Account")">EDIT ACCOUNT</a>
+                <a href="/" class="button">LOG OUT</a>
+            </div>
+        </div>
+        <div class="col-sm-8 fadeUpEffect1">
+            <h1>HISTORY</h1>
+            <div class="table-responsive">
+                <table class="table">
+                    <tr>
+                        <td><img src="../../Content/Images/cavalli.png" /></td>
+                        <td>CAVALLI CLASS</td>
+                        <td>X2</td>
+                        <td><span>1 hour ago</span></td>
+                    </tr>
+
+                    <tr>
+                        <td><img src="../../Content/Images/zara.png" /></td>
+                        <td>ZARA SKIRT</td>
+                        <td>X1</td>
+                        <td><span>2 hour ago</span></td>
+                    </tr>
+
+                    <tr>
+                        <td><img src="../../Content/Images/g-vest.png" /></td>
+                        <td>G-VEST</td>
+                        <td>X1</td>
+                        <td><span>2 hour ago</span></td>
+                    </tr>
+
+                    <tr>
+                        <td><img src="../../Content/Images/t-shirt.png" /></td>
+                        <td>T-SHIRT M</td>
+                        <td>X1</td>
+                        <td><span>Yesterday</span></td>
+                    </tr>
+
+
+                </table>
+            </div>
+
+            <a href="#">
+                <span>MORE</span>
+                <i class="fa fa-circle"></i>
+                <i class="fa fa-circle"></i>
+                <i class="fa fa-circle"></i>
+            </a>
+        </div>
+    </div>
+</div>

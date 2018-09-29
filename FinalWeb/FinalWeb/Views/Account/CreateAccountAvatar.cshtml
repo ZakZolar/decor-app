@@ -1,0 +1,63 @@
+﻿@{
+    ViewBag.Title = "Create Account Avatar | Soul Template";
+    ViewBag.PageTitle = "CREATE AN ACCOUNT";
+}
+<div class="page-wrap">
+    <div class="wiwet-create-steps">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-4 fadeUpEffect">
+                    <a href="@Url.Action("CreateAccountInfo", "Account")">
+                        <div class="row">
+                            <div class="col-sm-2"><span>1</span></div>
+                            <div class="col-sm-10">
+                                <p>INFORMATION</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-xs-4 fadeUpEffect1 wait05s active">
+                    <div class="row">
+                        <div class="col-sm-2"><span>2</span></div>
+                        <div class="col-sm-10">
+                            <p>AVATAR</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-4 fadeUpEffect2 wait07s">
+                    <a href="@Url.Action("CreateAccountWallet", "Account")">
+                        <div class="row">
+                            <div class="col-sm-2"><span>3</span></div>
+                            <div class="col-sm-10">
+                                <p>WALLET</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container fadeUpEffect2 wait07s">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+                <form class="wiwet-upload-avatar">
+                    <div class="wiwet-file-input">
+                        <input class="fileInput" type="file" name="file1" />
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-4 col-sm-offset-4">
+                            <input type="submit" value="UPLOAD" />
+                            <br />
+                            <a href="@Url.Action("CreateAccountWallet", "Account")" class="button">NEXT STEP</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
